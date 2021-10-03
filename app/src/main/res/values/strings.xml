@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyBaseTemplate</string>
+    <string name="title_intro">My Base Template</string>
+    <string name="content_created_by">By choidev.xyz</string>
 </resources>
