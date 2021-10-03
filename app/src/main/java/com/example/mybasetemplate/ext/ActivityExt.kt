@@ -14,6 +14,8 @@ fun Activity.startActivity(activity: Activity) {
 fun Activity.setDelayedFunction(function: () -> Unit, delay: Long) {
     CoroutineScope(Dispatchers.IO).launch {
         delay(delay)
-        function.invoke()
+        CoroutineScope(Dispatchers.Main).launch {
+            function.invoke()
+        }
     }
 }
