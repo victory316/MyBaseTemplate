@@ -1,10 +1,11 @@
-package com.example.mybasetemplate.ui
+package com.example.mybasetemplate.ui.splash
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.ext.setDelayedFunction
 import com.example.mybasetemplate.ext.startActivityClearTop
+import com.example.mybasetemplate.ui.intro.IntroActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
