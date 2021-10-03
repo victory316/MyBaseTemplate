@@ -11,6 +11,10 @@ fun Activity.startActivity(activity: Activity) {
     startActivity(Intent(this, activity.javaClass))
 }
 
+fun Activity.startActivityClearTop(activity: Activity) {
+    startActivity(Intent(this, activity.javaClass).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+}
+
 fun Activity.setDelayedFunction(function: () -> Unit, delay: Long) {
     CoroutineScope(Dispatchers.IO).launch {
         delay(delay)

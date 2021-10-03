@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.ext.setDelayedFunction
 import com.example.mybasetemplate.ext.startActivity
+import com.example.mybasetemplate.ext.startActivityClearTop
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,13 +18,14 @@ class SplashActivity : AppCompatActivity() {
     private fun setupUi() {
         setDelayedFunction(
             function = {
-                startActivity(IntroActivity())
+                startActivityClearTop(IntroActivity())
+                finish()
             },
             delay = SPLASH_DELAY
         )
     }
 
     companion object {
-        const val SPLASH_DELAY = 1000L
+        const val SPLASH_DELAY = 1500L
     }
 }
