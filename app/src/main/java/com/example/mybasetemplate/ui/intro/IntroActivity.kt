@@ -30,6 +30,13 @@ class IntroActivity : AppCompatActivity() {
         }
 
         adapter.setItems(listOf(IntroFeatureData(1, "야호")))
+
+        // TODO Featured Items
+        /**
+         *  1. Weather API Search
+         *  2. Motion Layout
+         *  3. Material Components
+         */
     }
 
     private fun subscribeUi() {

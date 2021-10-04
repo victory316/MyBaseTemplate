@@ -21,7 +21,6 @@ class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAda
 
         fun bind(item: IntroFeatureData) {
             binding.tvTitle.text = item.featureName
-            binding.root.setBackgroundColor(context.getColor(R.color.color_primary_100))
         }
     }
 
