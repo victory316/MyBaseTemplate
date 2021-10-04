@@ -7,15 +7,17 @@ import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
 import com.example.mybasetemplate.presentation.IntroViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  *  앱이 시작된 뒤로 사용 가능한 기능들을 나열하는 Activity
  */
+@AndroidEntryPoint
 class IntroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
     private lateinit var adapter: IntroAdapter
 
-    private val viewModel: IntroViewModel by viewModels()
+    private val introViewModel: IntroViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class IntroActivity : AppCompatActivity() {
 
         with(binding) {
             middleRecyclerView.adapter = adapter
+            viewModel = introViewModel
         }
 
         adapter.setItems(

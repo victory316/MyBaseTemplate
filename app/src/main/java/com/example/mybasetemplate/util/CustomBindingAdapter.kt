@@ -39,11 +39,11 @@ object CustomBindingAdapter {
         }
     }
 
-    @JvmStatic
-    @BindingAdapter("onItemClick")
-    fun setOnItemClick(view: View, function: () -> Unit) {
-        val scope = CoroutineScope(Dispatchers.IO).launch {
-
-        }
-    }
+//    @JvmStatic
+//    @BindingAdapter("onItemClick")
+//    fun setOnItemClick(view: View, function: () -> Unit) {
+//        val scope = CoroutineScope(Dispatchers.IO).launch {
+//
+//        }
+//    }
 }
