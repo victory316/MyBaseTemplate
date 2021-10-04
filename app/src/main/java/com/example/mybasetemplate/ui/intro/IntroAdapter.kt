@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ItemIntroFeatureBinding
+import com.example.mybasetemplate.enums.IntroFeatures
 
 /**
  *  인트로 페이지의 기능 리스트를 보이는 Adapter
@@ -20,6 +21,7 @@ class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAda
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: IntroFeatureData) {
+            binding.introFeature = IntroFeatures.FEATURE_MATERIAL
             binding.tvTitle.text = item.featureName
         }
     }
