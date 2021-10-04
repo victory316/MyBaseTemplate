@@ -2,10 +2,11 @@ package com.example.mybasetemplate.ui.intro
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mybasetemplate.R
+import androidx.activity.viewModels
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
+import com.example.mybasetemplate.presentation.IntroViewModel
 
 /**
  *  앱이 시작된 뒤로 사용 가능한 기능들을 나열하는 Activity
@@ -13,6 +14,8 @@ import com.example.mybasetemplate.enums.IntroFeatures
 class IntroActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroBinding
     private lateinit var adapter: IntroAdapter
+
+    private val viewModel: IntroViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
