@@ -3,6 +3,7 @@ package com.example.mybasetemplate.ui.intro
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mybasetemplate.R
+import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 
 /**
@@ -28,8 +29,7 @@ class IntroActivity : AppCompatActivity() {
             middleRecyclerView.adapter = adapter
         }
 
-
-        // TODO 신규로 구현한 기능들을 리스트 형으로 확인 가능하도록 구현.
+        adapter.setItems(listOf(IntroFeatureData(1, "야호")))
     }
 
     private fun subscribeUi() {

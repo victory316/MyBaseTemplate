@@ -1,10 +1,14 @@
 package com.example.mybasetemplate.ui.intro
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mybasetemplate.R
 import com.example.mybasetemplate.data.IntroFeatureData
+import com.example.mybasetemplate.databinding.ItemIntroFeatureBinding
 
 /**
  *  인트로 페이지의 기능 리스트를 보이는 Adapter
@@ -12,7 +16,8 @@ import com.example.mybasetemplate.data.IntroFeatureData
 class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAdapter.ViewHolder>() {
     var datas = mutableListOf<IntroFeatureData>()
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(binding: ItemIntroFeatureBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
     }
 
@@ -22,14 +27,17 @@ class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAda
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = ItemIntroFeatureBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
 
-        return ViewHolder(parent.rootView)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     }
 
     override fun getItemCount(): Int {
-        return 0
+        return datas.size
     }
 }
