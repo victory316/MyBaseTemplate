@@ -7,7 +7,10 @@ import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
 import com.example.mybasetemplate.ext.showToast
+import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.presentation.IntroViewModel
+import com.example.mybasetemplate.ui.material.MaterialActivity
+import com.example.mybasetemplate.ui.weather.WeatherActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -58,10 +61,13 @@ class IntroActivity : AppCompatActivity() {
             onIntroEvent.observe(this@IntroActivity, {
                 when (it) {
                     IntroViewModel.Companion.IntroEvent.EVENT_OPEN_MATERIAL -> {
-                        showToast("매터리얼 오픈!")
+                        startActivity(MaterialActivity())
                     }
                     IntroViewModel.Companion.IntroEvent.EVENT_OPEN_WEATHER_API -> {
-                        showToast("날씨 보기 오픈!")
+                        startActivity(WeatherActivity())
+                    }
+                    else -> {
+                        throw Exception("Wrong event called")
                     }
                 }
             })
