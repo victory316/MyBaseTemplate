@@ -13,9 +13,16 @@ class IntroViewModel : ViewModel() {
 
     val onIntroEvent = MutableLiveData<IntroEvent>()
 
-    fun openFunction(introFeatures: IntroEvent) {
+    fun openFunction(introFeatures: IntroFeatures) {
         viewModelScope.launch {
-            onIntroEvent.postValue(introFeatures)
+            when (introFeatures) {
+                IntroFeatures.FEATURE_MATERIAL -> {
+                    onIntroEvent.postValue(IntroEvent.EVENT_OPEN_MATERIAL)
+                }
+                IntroFeatures.FEATURE_WEATHER_API -> {
+                    onIntroEvent.postValue(IntroEvent.EVENT_OPEN_WEATHER_API)
+                }
+            }
         }
     }
 

@@ -29,7 +29,7 @@ class IntroActivity : AppCompatActivity() {
 
     private fun setupUi() {
         binding = ActivityIntroBinding.inflate(layoutInflater)
-        adapter = IntroAdapter(this@IntroActivity)
+        adapter = IntroAdapter(introViewModel)
         setContentView(binding.root)
 
         with(binding) {

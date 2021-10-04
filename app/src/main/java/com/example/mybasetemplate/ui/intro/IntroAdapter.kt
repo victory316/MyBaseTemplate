@@ -10,11 +10,13 @@ import com.example.mybasetemplate.R
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ItemIntroFeatureBinding
 import com.example.mybasetemplate.enums.IntroFeatures
+import com.example.mybasetemplate.presentation.IntroViewModel
 
 /**
  *  인트로 페이지의 기능 리스트를 보이는 Adapter
  */
-class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAdapter.ViewHolder>() {
+class IntroAdapter(private val viewModel: IntroViewModel) :
+    RecyclerView.Adapter<IntroAdapter.ViewHolder>() {
     var datas = mutableListOf<IntroFeatureData>()
 
     inner class ViewHolder(private val binding: ItemIntroFeatureBinding) :
@@ -22,6 +24,9 @@ class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAda
 
         fun bind(item: IntroFeatureData) {
             binding.introFeature = item.feature
+            binding.root.setOnClickListener {
+                viewModel.openFunction(item.feature)
+            }
         }
     }
 

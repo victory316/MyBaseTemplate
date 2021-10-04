@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="viewModel"
+            type="com.example.mybasetemplate.presentation.IntroViewModel" />
+
+        <variable
             name="introFeature"
             type="com.example.mybasetemplate.enums.IntroFeatures" />
     </data>
@@ -33,9 +37,9 @@
 
             <TextView
                 android:id="@+id/tv_title"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 introItemTitle="@{introFeature}"
                 android:layout_width="0dp"
-                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
