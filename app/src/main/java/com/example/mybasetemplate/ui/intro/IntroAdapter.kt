@@ -16,9 +16,13 @@ import com.example.mybasetemplate.databinding.ItemIntroFeatureBinding
 class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAdapter.ViewHolder>() {
     var datas = mutableListOf<IntroFeatureData>()
 
-    inner class ViewHolder(binding: ItemIntroFeatureBinding) :
+    inner class ViewHolder(private val binding: ItemIntroFeatureBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        fun bind(item: IntroFeatureData) {
+            binding.tvTitle.text = item.featureName
+            binding.root.setBackgroundColor(context.getColor(R.color.color_primary_100))
+        }
     }
 
     fun setItems(list: List<IntroFeatureData>) {
@@ -35,6 +39,7 @@ class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAda
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(datas[position])
     }
 
     override fun getItemCount(): Int {
