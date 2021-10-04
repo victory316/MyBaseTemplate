@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
+import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.presentation.IntroViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,6 +33,7 @@ class IntroActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
+            lifecycleOwner = this@IntroActivity
             middleRecyclerView.adapter = adapter
             viewModel = introViewModel
         }
@@ -52,6 +54,17 @@ class IntroActivity : AppCompatActivity() {
     }
 
     private fun subscribeUi() {
-
+        with(introViewModel) {
+            onIntroEvent.observe(this@IntroActivity, {
+                when (it) {
+                    IntroViewModel.Companion.IntroEvent.EVENT_OPEN_MATERIAL -> {
+                        showToast("매터리얼 오픈!")
+                    }
+                    IntroViewModel.Companion.IntroEvent.EVENT_OPEN_WEATHER_API -> {
+                        showToast("날씨 보기 오픈!")
+                    }
+                }
+            })
+        }
     }
 }

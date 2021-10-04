@@ -2,6 +2,7 @@ package com.example.mybasetemplate.ext
 
 import android.app.Activity
 import android.content.Intent
+import android.widget.Toast
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -22,4 +23,8 @@ fun Activity.setDelayedFunction(function: () -> Unit, delay: Long) {
             function.invoke()
         }
     }
+}
+
+fun Activity.showToast(string: String) {
+    Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
 }
