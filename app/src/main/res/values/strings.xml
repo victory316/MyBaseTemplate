@@ -2,4 +2,7 @@
     <string name="app_name">MyBaseTemplate</string>
     <string name="title_intro">My Base Template</string>
     <string name="content_created_by">By choidev.xyz</string>
+    <string name="item_material">Material Design</string>
+    <string name="item_weather_api">Weather API</string>
+    <string name="item_motion_layout">Motion Layout</string>
 </resources>

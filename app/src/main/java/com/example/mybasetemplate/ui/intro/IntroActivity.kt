@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
+import com.example.mybasetemplate.enums.IntroFeatures
 
 /**
  *  앱이 시작된 뒤로 사용 가능한 기능들을 나열하는 Activity
@@ -29,7 +30,12 @@ class IntroActivity : AppCompatActivity() {
             middleRecyclerView.adapter = adapter
         }
 
-        adapter.setItems(listOf(IntroFeatureData(1, "야호")))
+        adapter.setItems(
+            listOf(
+                IntroFeatureData(1, IntroFeatures.FEATURE_MATERIAL),
+                IntroFeatureData(1, IntroFeatures.FEATURE_WEATHER_API)
+            )
+        )
 
         // TODO Featured Items
         /**

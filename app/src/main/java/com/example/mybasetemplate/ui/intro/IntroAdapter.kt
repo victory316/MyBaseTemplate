@@ -21,8 +21,7 @@ class IntroAdapter(private val context: Context) : RecyclerView.Adapter<IntroAda
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: IntroFeatureData) {
-            binding.introFeature = IntroFeatures.FEATURE_MATERIAL
-            binding.tvTitle.text = item.featureName
+            binding.introFeature = item.feature
         }
     }
 
