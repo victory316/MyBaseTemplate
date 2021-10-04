@@ -5,4 +5,7 @@
     <string name="item_material">Material Design</string>
     <string name="item_weather_api">Weather API</string>
     <string name="item_motion_layout">Motion Layout</string>
+    <string name="item_material_menu_1">Basics</string>
+    <string name="item_material_menu_2">BottomSheet</string>
+    <string name="item_material_menu_3">Components</string>
 </resources>
