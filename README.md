@@ -23,3 +23,4 @@ By Seongwhan Choi
 - Fast App which not use main thread heavy
 - User Friendly and fun to use
 - Clean and simple, reusable codes
+- Built with Unit test, UI test
