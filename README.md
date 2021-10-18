@@ -17,3 +17,9 @@ By Seongwhan Choi
 - Hilt
 - Clean Architecture
 - Google Matrial Design
+
+### What I'm focusing
+
+- Fast App which not use main thread heavy
+- User Friendly and fun to use
+- Clean and simple, reusable codes
