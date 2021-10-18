@@ -8,7 +8,7 @@ By Seongwhan Choi
 - Material Design Components(In working)
 - Motion Layout(In working)
 - Fast browsing with Chrome Custom Tabs(In working)
-- REST API Using Retrofit2
+- REST API Using Retrofit2(In working)
 - Sample Chat(In working)
 
 ### What were used
