@@ -16,18 +16,21 @@ class MaterialActivity : AppCompatActivity() {
         subscribeUi()
     }
 
-    private fun subscribeUi() {
-
-    }
-
     private fun setupUi() {
         binding = ActivityMaterialBinding.inflate(layoutInflater)
-        pagerAdapter = MaterialPagerAdapter()
+        pagerAdapter = MaterialPagerAdapter(supportFragmentManager, lifecycle)
 
         with(binding) {
             mainViewPager.adapter = pagerAdapter
         }
 
+        pagerAdapter.setFragments(MaterialBasicFragment.newInstance("", ""))
+
         setContentView(binding.root)
     }
+
+    private fun subscribeUi() {
+
+    }
+
 }

@@ -2,40 +2,28 @@ package com.example.mybasetemplate.ui.material
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ItemIntroFeatureBinding
 
-class MaterialPagerAdapter() :
-    RecyclerView.Adapter<MaterialPagerAdapter.ViewHolder>() {
-    var datas = mutableListOf<IntroFeatureData>()
+class MaterialPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fragmentManager, lifecycle) {
+    var datas = mutableListOf<Fragment>()
 
-    inner class ViewHolder(private val binding: ItemIntroFeatureBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(item: IntroFeatureData) {
-
-        }
-    }
-
-    fun setItems(list: List<IntroFeatureData>) {
-        datas.addAll(list)
+    fun setFragments(vararg fragments: Fragment) {
+        datas.addAll(fragments)
         notifyDataSetChanged()
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = ItemIntroFeatureBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        )
-
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(datas[position])
     }
 
     override fun getItemCount(): Int {
         return datas.size
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return datas[position]
     }
 }
