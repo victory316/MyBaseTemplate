@@ -18,13 +18,38 @@ class MaterialActivity : AppCompatActivity() {
 
     private fun setupUi() {
         binding = ActivityMaterialBinding.inflate(layoutInflater)
-        pagerAdapter = MaterialPagerAdapter(supportFragmentManager, lifecycle)
 
-        with(binding) {
-            mainViewPager.adapter = pagerAdapter
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.material_frame, MaterialBasicFragment.newInstance("", ""))
+            .commit()
+
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.page_1 -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.material_frame, MaterialBasicFragment.newInstance("", ""))
+                        .commit()
+                }
+                R.id.page_2 -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(
+                            R.id.material_frame,
+                            MaterialBottomSheetFragment.newInstance("", "")
+                        ).commit()
+                }
+                R.id.page_3 -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.material_frame, MaterialBasicFragment.newInstance("", ""))
+                        .commit()
+                }
+
+                else -> {
+
+                }
+            }
+
+            return@setOnItemSelectedListener true
         }
-
-        pagerAdapter.setFragments(MaterialBasicFragment.newInstance("", ""))
 
         setContentView(binding.root)
     }
