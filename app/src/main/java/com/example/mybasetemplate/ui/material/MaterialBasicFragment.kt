@@ -33,8 +33,6 @@ class MaterialBasicFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        setupUi()
-        subscrbeUi()
     }
 
     private fun setupUi() {
@@ -47,13 +45,12 @@ class MaterialBasicFragment : Fragment() {
                         addOnPositiveButtonClickListener {
                             showToast(it.toString())
                         }
-                    }
+                    }.show(parentFragmentManager, null)
             }
         }
     }
 
     private fun subscrbeUi() {
-        TODO("Not yet implemented")
     }
 
     override fun onCreateView(
@@ -62,6 +59,9 @@ class MaterialBasicFragment : Fragment() {
     ): View? {
         binding =
             FragmentMaterialBasicBinding.inflate(inflater, container, false)
+
+        setupUi()
+        subscrbeUi()
 
         // Inflate the layout for this fragment
         return binding.root
