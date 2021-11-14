@@ -10,6 +10,7 @@ By Seongwhan Choi
 - Fast browsing with Chrome Custom Tabs(In working)
 - REST API Using Retrofit2(In working)
 - Sample Chat(In working)
+- WorkManger(In working)
 
 ### What were used
 
