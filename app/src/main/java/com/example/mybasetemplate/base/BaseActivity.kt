@@ -25,7 +25,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
         scope.cancel()
 
-
         super.onBackPressed()
     }
 }

@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.databinding.ActivityMaterialBinding
+import com.example.mybasetemplate.ext.replaceFragment
 
+/**
+ *  For testing various material components
+ */
 class MaterialActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMaterialBinding
 
@@ -18,28 +22,21 @@ class MaterialActivity : AppCompatActivity() {
     private fun setupUi() {
         binding = ActivityMaterialBinding.inflate(layoutInflater)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.material_frame, MaterialBasicFragment.newInstance("", ""))
-            .commit()
+        replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance(" ", ""))
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.page_1 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.material_frame, MaterialBasicFragment.newInstance("", ""))
-                        .commit()
+                    replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance(" ", ""))
                 }
                 R.id.page_2 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(
-                            R.id.material_frame,
-                            MaterialBottomSheetFragment.newInstance("", "")
-                        ).commit()
+                    replaceFragment(
+                        R.id.material_frame,
+                        MaterialBottomSheetFragment.newInstance(" ", "")
+                    )
                 }
                 R.id.page_3 -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.material_frame, MaterialBasicFragment.newInstance("", ""))
-                        .commit()
+                    replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance(" ", ""))
                 }
 
                 else -> {

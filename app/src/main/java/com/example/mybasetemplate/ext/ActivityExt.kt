@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -28,4 +29,9 @@ fun Activity.setDelayedFunction(function: () -> Unit, delay: Long) {
 
 fun Activity.showToast(string: String) {
     Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
+}
+
+fun FragmentActivity.replaceFragment(id: Int, fragment: Fragment) {
+    supportFragmentManager.beginTransaction()
+        .replace(id, fragment).commit()
 }
