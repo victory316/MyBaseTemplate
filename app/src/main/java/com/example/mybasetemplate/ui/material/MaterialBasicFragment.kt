@@ -47,6 +47,16 @@ class MaterialBasicFragment : Fragment() {
                         }
                     }.show(parentFragmentManager, null)
             }
+
+            datePickerRangeButton.setOnClickListener {
+                MaterialDatePicker.Builder.dateRangePicker()
+                    .build()
+                    .apply {
+                        addOnPositiveButtonClickListener {
+                            showToast("${it.first}, ${it.second}")
+                        }
+                    }.show(parentFragmentManager, null)
+            }
         }
     }
 
