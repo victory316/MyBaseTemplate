@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.example.mybasetemplate.presentation.MaterialViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="2000-01-01"
+            applyDateWithLong="@{viewModel.selectedSingleDate}"
             app:layout_constraintBottom_toBottomOf="@id/date_picker_button"
             app:layout_constraintLeft_toRightOf="@id/date_picker_button"
             app:layout_constraintRight_toRightOf="parent"

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mybasetemplate.databinding.FragmentMaterialBasicBinding
 import com.example.mybasetemplate.ext.showToast
+import com.example.mybasetemplate.presentation.MaterialViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,9 +26,14 @@ class MaterialBasicFragment : Fragment() {
     private var param2: String? = null
 
     lateinit var binding: FragmentMaterialBasicBinding
+    lateinit var materialViewModel: MaterialViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // TODO DI로 주입
+        materialViewModel = MaterialViewModel()
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -37,13 +43,16 @@ class MaterialBasicFragment : Fragment() {
 
     private fun setupUi() {
         with(binding) {
+
+
             datePickerButton.setOnClickListener {
                 MaterialDatePicker.Builder.datePicker()
                     .setSelection(MaterialDatePicker.thisMonthInUtcMilliseconds())
                     .build()
                     .apply {
                         addOnPositiveButtonClickListener {
-                            showToast(it.toString())
+                            materialViewModel.selectedSingleDate.postValue(it)
+                            showToast("날짜가 선택되었어요.")
                         }
                     }.show(parentFragmentManager, null)
             }
