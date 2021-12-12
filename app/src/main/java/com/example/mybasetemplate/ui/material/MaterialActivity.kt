@@ -22,12 +22,12 @@ class MaterialActivity : AppCompatActivity() {
     private fun setupUi() {
         binding = ActivityMaterialBinding.inflate(layoutInflater)
 
-        replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance(" ", ""))
+        replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance())
 
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.page_1 -> {
-                    replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance(" ", ""))
+                    replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance())
                 }
                 R.id.page_2 -> {
                     replaceFragment(
@@ -36,7 +36,7 @@ class MaterialActivity : AppCompatActivity() {
                     )
                 }
                 R.id.page_3 -> {
-                    replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance(" ", ""))
+                    replaceFragment(R.id.material_frame, MaterialBasicFragment.newInstance())
                 }
 
                 else -> {
