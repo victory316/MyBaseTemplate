@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import com.example.mybasetemplate.R
 import com.example.mybasetemplate.databinding.FragmentMaterialBasicBinding
 import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.presentation.MaterialViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -75,6 +77,19 @@ class MaterialBasicFragment : Fragment() {
                             showToast("날짜가 선택되었어요.")
                         }
                     }.show(parentFragmentManager, null)
+            }
+
+            floatingActionButton.setOnClickListener {
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(resources.getString(R.string.title_show_dialog))
+                    .setMessage(resources.getString(R.string.content_sample_dialog))
+                    .setNegativeButton(resources.getString(R.string.content_ok_button_dialog)) { _, _ ->
+
+                    }
+                    .setPositiveButton(resources.getString(R.string.content_show_big_dialog)) { _, _ ->
+                        // Respond to positive button press
+                    }
+                    .show()
             }
         }
     }
