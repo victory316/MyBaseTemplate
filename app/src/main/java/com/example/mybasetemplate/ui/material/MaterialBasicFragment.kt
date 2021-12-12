@@ -41,7 +41,7 @@ class MaterialBasicFragment : Fragment() {
 
             floatingActionButton.shrink()
 
-            svBase.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            svBase.setOnScrollChangeListener { _, _, scrollY, _, _ ->
 
                 if (scrollY > 50L) {
                     floatingActionButton.extend()
