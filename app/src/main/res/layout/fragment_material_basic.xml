@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.mybasetemplate.presentation.MaterialViewModel" />
@@ -26,10 +27,10 @@
 
         <TextView
             android:id="@+id/tv_date"
+            applyDateWithLong="@{viewModel.selectedSingleDate}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            applyDateWithLong="@{viewModel.selectedSingleDate}"
             app:layout_constraintBottom_toBottomOf="@id/date_picker_button"
             app:layout_constraintLeft_toRightOf="@id/date_picker_button"
             app:layout_constraintRight_toRightOf="parent"
@@ -46,19 +47,19 @@
 
         <TextView
             android:id="@+id/tv_date_start"
+            applyDateWithLong="@{viewModel.selectedRangedDate.first}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="2000-01-01"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/date_picker_range_button" />
 
         <TextView
             android:id="@+id/tv_date_end"
+            applyDateWithLong="@{viewModel.selectedRangedDate.second}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="2000-01-01"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toRightOf="@id/date_picker_button"
             app:layout_constraintRight_toRightOf="parent"

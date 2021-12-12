@@ -32,7 +32,15 @@ class MaterialBasicFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         // TODO DI로 주입
-        materialViewModel = MaterialViewModel()
+        materialViewModel = MaterialViewModel().apply {
+            selectedSingleDate.postValue(System.currentTimeMillis())
+            selectedRangedDate.postValue(
+                Pair(
+                    System.currentTimeMillis(),
+                    System.currentTimeMillis()
+                )
+            )
+        }
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
@@ -43,7 +51,8 @@ class MaterialBasicFragment : Fragment() {
 
     private fun setupUi() {
         with(binding) {
-
+            viewModel = materialViewModel
+            lifecycleOwner = viewLifecycleOwner
 
             datePickerButton.setOnClickListener {
                 MaterialDatePicker.Builder.datePicker()
@@ -62,7 +71,12 @@ class MaterialBasicFragment : Fragment() {
                     .build()
                     .apply {
                         addOnPositiveButtonClickListener {
-                            showToast("${it.first}, ${it.second}")
+
+                            materialViewModel.selectedRangedDate.postValue(
+                                Pair(it.first, it.second)
+                            )
+
+                            showToast("날짜가 선택되었어요.")
                         }
                     }.show(parentFragmentManager, null)
             }
