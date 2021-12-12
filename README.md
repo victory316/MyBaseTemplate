@@ -4,7 +4,7 @@ My App template, from basic features to advanced one!
 
 By Seongwhan Choi
 
-### What are available (For now, everyting in working!)
+### What are available
 ##### Material Design Components
 	ExtendedFloatingActionButton, BottomNavigationView, DatePicker(Single, Ranged)
 
