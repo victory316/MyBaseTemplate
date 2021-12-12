@@ -37,6 +37,15 @@ class MaterialBasicFragment : Fragment() {
             viewModel = materialViewModel
             lifecycleOwner = viewLifecycleOwner
 
+            svBase.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+
+                if (scrollY != 0) {
+                    floatingActionButton.extend()
+                } else {
+                    floatingActionButton.shrink()
+                }
+            }
+
             datePickerButton.setOnClickListener {
                 MaterialDatePicker.Builder.datePicker()
                     .setSelection(MaterialDatePicker.thisMonthInUtcMilliseconds())
