@@ -37,9 +37,11 @@ class MaterialBasicFragment : Fragment() {
             viewModel = materialViewModel
             lifecycleOwner = viewLifecycleOwner
 
+            floatingActionButton.shrink()
+
             svBase.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
 
-                if (scrollY != 0) {
+                if (scrollY > 50L) {
                     floatingActionButton.extend()
                 } else {
                     floatingActionButton.shrink()
