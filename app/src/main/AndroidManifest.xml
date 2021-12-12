@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyBaseTemplate">
-        <activity android:name=".ui.motionlayout.MotionLayoutActivity"></activity>
+        <activity android:name=".ui.motionlayout.MotionLayoutActivity" />
         <activity android:name=".ui.weather.WeatherActivity" />
         <activity android:name=".ui.material.MaterialActivity" />
         <activity android:name=".ui.intro.IntroActivity" />

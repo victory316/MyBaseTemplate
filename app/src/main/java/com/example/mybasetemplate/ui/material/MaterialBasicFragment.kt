@@ -5,23 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.mybasetemplate.databinding.FragmentMaterialBasicBinding
 import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.presentation.MaterialViewModel
 import com.google.android.material.datepicker.MaterialDatePicker
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  *  기본적인 컴포넌트 사용 예를 보이는 Fragment
  */
+@AndroidEntryPoint
 class MaterialBasicFragment : Fragment() {
     lateinit var binding: FragmentMaterialBasicBinding
-    lateinit var materialViewModel: MaterialViewModel
+    private val materialViewModel: MaterialViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO DI로 주입
-        materialViewModel = MaterialViewModel().apply {
+        materialViewModel.apply {
             selectedSingleDate.postValue(System.currentTimeMillis())
             selectedRangedDate.postValue(
                 Pair(
