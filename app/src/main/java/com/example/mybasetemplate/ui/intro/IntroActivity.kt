@@ -18,9 +18,9 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 @AndroidEntryPoint
 class IntroActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityIntroBinding
     private lateinit var adapter: IntroAdapter
-
     private val introViewModel: IntroViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +40,7 @@ class IntroActivity : AppCompatActivity() {
             middleRecyclerView.adapter = adapter
             viewModel = introViewModel
         }
+
         binding.middleRecyclerView.setItemViewCacheSize(10)
 
         adapter.setItems(
