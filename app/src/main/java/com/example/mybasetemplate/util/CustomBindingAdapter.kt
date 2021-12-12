@@ -9,6 +9,7 @@ import com.example.mybasetemplate.enums.IntroFeatures
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.DateFormat
 
 object CustomBindingAdapter {
 
@@ -36,6 +37,15 @@ object CustomBindingAdapter {
             IntroFeatures.FEATURE_WEATHER_API -> {
                 view.text = view.context.getText(R.string.item_weather_api)
             }
+        }
+    }
+
+    // ref: https://stackoverflow.com/questions/454315/how-to-format-date-and-time-in-android
+    @JvmStatic
+    @BindingAdapter("applyDateWithLong")
+    fun setDateWithLong(view: TextView, timeInMillis: Long) {
+        DateFormat.getDateInstance().format(timeInMillis).let {
+            view.text = it
         }
     }
 

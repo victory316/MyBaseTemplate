@@ -40,6 +40,7 @@ class IntroActivity : AppCompatActivity() {
             middleRecyclerView.adapter = adapter
             viewModel = introViewModel
         }
+        binding.middleRecyclerView.setItemViewCacheSize(10)
 
         adapter.setItems(
             listOf(
