@@ -5,7 +5,9 @@ My App template, from basic features to advanced one!
 By Seongwhan Choi
 
 ### What are available (For now, everyting in working!)
-- Material Design Components(In working)
+##### Material Design Components
+	ExtendedFloatingActionButton, BottomNavigationView, DatePicker(Single, Ranged)
+
 - Motion Layout(In working)
 - Fast browsing with Chrome Custom Tabs(In working)
 - REST API Using Retrofit2(In working)
