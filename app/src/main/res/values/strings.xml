@@ -18,4 +18,5 @@
     <string name="content_show_dialog">Show me a dialog!</string>
     <string name="content_ok_button_dialog">That\'s enough</string>
     <string name="content_show_big_dialog">SHOW BIG ONE!</string>
+    <string name="title_activity_compose">ComposeActivity</string>
 </resources>

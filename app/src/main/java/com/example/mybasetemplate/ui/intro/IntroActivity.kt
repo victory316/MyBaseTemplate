@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
-import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.presentation.IntroViewModel
 import com.example.mybasetemplate.ui.compose.ComposeActivity
