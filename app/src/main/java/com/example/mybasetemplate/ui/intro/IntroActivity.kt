@@ -9,6 +9,7 @@ import com.example.mybasetemplate.enums.IntroFeatures
 import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.presentation.IntroViewModel
+import com.example.mybasetemplate.ui.compose.ComposeActivity
 import com.example.mybasetemplate.ui.material.MaterialActivity
 import com.example.mybasetemplate.ui.weather.WeatherActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -70,7 +71,7 @@ class IntroActivity : AppCompatActivity() {
                         startActivity(WeatherActivity())
                     }
                     IntroViewModel.Companion.IntroEvent.EVENT_OPEN_COMPOSE -> {
-
+                        startActivity(ComposeActivity())
                     }
 
                     else -> {

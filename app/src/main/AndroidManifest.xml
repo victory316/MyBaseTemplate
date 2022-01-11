@@ -10,6 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyBaseTemplate">
+        <activity
+            android:name=".ui.compose.ComposeActivity"
+            android:exported="false" />
         <activity android:name=".ui.motionlayout.MotionLayoutActivity" />
         <activity android:name=".ui.weather.WeatherActivity" />
         <activity android:name=".ui.material.MaterialActivity" />
