@@ -7,5 +7,6 @@ package com.example.mybasetemplate.enums
  */
 enum class IntroFeatures {
     FEATURE_MATERIAL,
-    FEATURE_WEATHER_API
+    FEATURE_WEATHER_API,
+    FEATURE_COMPOSE
 }

@@ -46,7 +46,8 @@ class IntroActivity : AppCompatActivity() {
         adapter.setItems(
             listOf(
                 IntroFeatureData(1, IntroFeatures.FEATURE_MATERIAL),
-                IntroFeatureData(1, IntroFeatures.FEATURE_WEATHER_API)
+                IntroFeatureData(1, IntroFeatures.FEATURE_WEATHER_API),
+                IntroFeatureData(1, IntroFeatures.FEATURE_COMPOSE)
             )
         )
 
@@ -68,6 +69,10 @@ class IntroActivity : AppCompatActivity() {
                     IntroViewModel.Companion.IntroEvent.EVENT_OPEN_WEATHER_API -> {
                         startActivity(WeatherActivity())
                     }
+                    IntroViewModel.Companion.IntroEvent.EVENT_OPEN_COMPOSE -> {
+
+                    }
+
                     else -> {
                         throw Exception("Wrong event called")
                     }
