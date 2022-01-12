@@ -21,13 +21,15 @@ class ComposeActivity : ComponentActivity() {
             MyBaseTemplateTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                    Greeting(name = "hello")
-                    Hoho(name = "hhoho")
+
+                    Column {Greeting(name = "hello")
+                        Greeting("Android")
+                        Hoho(name = "hhoho")
+                        OutlinedButtonExample()
+                    }
                 }
             }
 
-            OutlinedButtonExample()
         }
     }
 }
