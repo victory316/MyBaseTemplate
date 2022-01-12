@@ -20,6 +20,7 @@ By Seongwhan Choi
 - Hilt
 - Clean Architecture
 - Google Matrial Design
+- Jetpack Compose
 
 ### What I'm focusing
 
