@@ -5,12 +5,19 @@ import android.os.Bundle
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.databinding.ActivityMaterialBinding
 import com.example.mybasetemplate.ext.replaceFragment
+import com.example.mybasetemplate.presentation.MaterialViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  *  For testing various material components
  */
+@AndroidEntryPoint
 class MaterialActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMaterialBinding
+
+    @Inject
+    lateinit var materialViewModel: MaterialViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

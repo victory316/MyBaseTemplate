@@ -6,9 +6,9 @@ import androidx.activity.viewModels
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
-import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.presentation.IntroViewModel
+import com.example.mybasetemplate.ui.compose.ComposeActivity
 import com.example.mybasetemplate.ui.material.MaterialActivity
 import com.example.mybasetemplate.ui.weather.WeatherActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,9 +18,9 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 @AndroidEntryPoint
 class IntroActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityIntroBinding
     private lateinit var adapter: IntroAdapter
-
     private val introViewModel: IntroViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,12 +40,14 @@ class IntroActivity : AppCompatActivity() {
             middleRecyclerView.adapter = adapter
             viewModel = introViewModel
         }
+
         binding.middleRecyclerView.setItemViewCacheSize(10)
 
         adapter.setItems(
             listOf(
                 IntroFeatureData(1, IntroFeatures.FEATURE_MATERIAL),
-                IntroFeatureData(1, IntroFeatures.FEATURE_WEATHER_API)
+                IntroFeatureData(1, IntroFeatures.FEATURE_WEATHER_API),
+                IntroFeatureData(1, IntroFeatures.FEATURE_COMPOSE)
             )
         )
 
@@ -67,6 +69,10 @@ class IntroActivity : AppCompatActivity() {
                     IntroViewModel.Companion.IntroEvent.EVENT_OPEN_WEATHER_API -> {
                         startActivity(WeatherActivity())
                     }
+                    IntroViewModel.Companion.IntroEvent.EVENT_OPEN_COMPOSE -> {
+                        startActivity(ComposeActivity())
+                    }
+
                     else -> {
                         throw Exception("Wrong event called")
                     }

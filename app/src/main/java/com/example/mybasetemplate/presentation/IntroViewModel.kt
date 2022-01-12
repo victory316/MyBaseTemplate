@@ -22,6 +22,9 @@ class IntroViewModel : ViewModel() {
                 IntroFeatures.FEATURE_WEATHER_API -> {
                     onIntroEvent.postValue(IntroEvent.EVENT_OPEN_WEATHER_API)
                 }
+                IntroFeatures.FEATURE_COMPOSE -> {
+                    onIntroEvent.postValue(IntroEvent.EVENT_OPEN_COMPOSE)
+                }
             }
         }
     }
@@ -29,7 +32,8 @@ class IntroViewModel : ViewModel() {
     companion object {
         enum class IntroEvent {
             EVENT_OPEN_MATERIAL,
-            EVENT_OPEN_WEATHER_API
+            EVENT_OPEN_WEATHER_API,
+            EVENT_OPEN_COMPOSE
         }
     }
 }

@@ -4,10 +4,19 @@
     <string name="content_created_by">By choidev.xyz</string>
     <string name="item_material">Material Design</string>
     <string name="item_weather_api">Weather API</string>
+    <string name="item_compose">Jetpack Compose</string>
     <string name="item_motion_layout">Motion Layout</string>
+
     <string name="item_material_menu_1">Basics</string>
     <string name="item_material_menu_2">BottomSheet</string>
     <string name="item_material_menu_3">Components</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_show_dialog">Sample Dialog</string>
+    <string name="content_sample_dialog">This is a sample dialog. Do you think it\'s enough?</string>
+    <string name="content_show_dialog">Show me a dialog!</string>
+    <string name="content_ok_button_dialog">That\'s enough</string>
+    <string name="content_show_big_dialog">SHOW BIG ONE!</string>
+    <string name="title_activity_compose">ComposeActivity</string>
 </resources>

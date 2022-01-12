@@ -10,12 +10,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyBaseTemplate">
-        <activity android:name=".ui.motionlayout.MotionLayoutActivity"></activity>
-        <activity android:name=".ui.weather.WeatherActivity" />
-        <activity android:name=".ui.material.MaterialActivity" />
-        <activity android:name=".ui.intro.IntroActivity" />
+        <activity
+            android:name=".ui.compose.ComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose"
+            android:theme="@style/Theme.MyBaseTemplate.NoActionBar" />
+        <activity
+            android:name=".ui.motionlayout.MotionLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.weather.WeatherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.material.MaterialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:exported="false" />
         <activity android:name=".base.BaseActivity" />
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

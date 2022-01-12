@@ -4,16 +4,16 @@
     <item
         android:id="@+id/page_1"
         android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/item_material_menu_1"/>
+        android:icon="@drawable/outline_deck_black_48"
+        android:title="@string/item_material_menu_1" />
     <item
         android:id="@+id/page_2"
         android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/item_material_menu_2"/>
+        android:icon="@drawable/outline_list_alt_black_48"
+        android:title="@string/item_material_menu_2" />
     <item
         android:id="@+id/page_3"
         android:enabled="true"
-        android:icon="@drawable/ic_launcher_foreground"
-        android:title="@string/item_material_menu_3"/>
+        android:icon="@drawable/outline_diamond_black_48"
+        android:title="@string/item_material_menu_3" />
 </menu>
