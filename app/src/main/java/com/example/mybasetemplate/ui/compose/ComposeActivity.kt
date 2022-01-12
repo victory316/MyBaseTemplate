@@ -13,6 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.mybasetemplate.ui.compose.ui.dialog.ComposeDialogs.AlertDialogSample
 import com.example.mybasetemplate.ui.compose.ui.theme.MyBaseTemplateTheme
 
 class ComposeActivity : ComponentActivity() {
@@ -86,57 +87,5 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     MyBaseTemplateTheme {
         Greeting("Android")
-    }
-}
-
-@Composable
-fun AlertDialogSample() {
-    MaterialTheme {
-        Column {
-            val openDialog = remember { mutableStateOf(false) }
-
-            Button(onClick = {
-                openDialog.value = true
-            }) {
-                Text("Click me")
-            }
-
-            if (openDialog.value) {
-
-                AlertDialog(
-                    onDismissRequest = {
-                        // Dismiss the dialog when the user clicks outside the dialog or on the back
-                        // button. If you want to disable that functionality, simply use an empty
-                        // onCloseRequest.
-                        openDialog.value = false
-                    },
-                    title = {
-                        Text(text = "Dialog Title")
-                    },
-                    text = {
-                        Text("Here is a text ")
-                    },
-                    confirmButton = {
-                        Button(
-
-                            onClick = {
-                                openDialog.value = false
-                            }) {
-                            Text("This is the Confirm Button")
-                        }
-                    },
-                    dismissButton = {
-                        Button(
-
-                            onClick = {
-                                openDialog.value = false
-                            }) {
-                            Text("This is the dismiss Button")
-                        }
-                    }
-                )
-            }
-        }
-
     }
 }
