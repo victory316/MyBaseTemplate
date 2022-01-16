@@ -3,16 +3,16 @@ package com.example.mybasetemplate.ui.compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.mybasetemplate.ui.compose.ui.dialog.ComposeDialogs.AlertDialogSample
 import com.example.mybasetemplate.ui.compose.ui.theme.MyBaseTemplateTheme
 
@@ -25,12 +25,10 @@ class ComposeActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
 
-                    Column {
-                        Greeting(name = "hello")
-                        Greeting("Android")
-                        Hoho(name = "hhoho")
-                        OutlinedButtonExample()
-                        AlertDialogSample()
+                    Column(modifier = Modifier.padding(24.dp)) {
+                        Greeting(content = "Hello Compose!")
+                        OutlinedButtonExample("Only using Compose")
+                        OutlinedButtonExample("Mix with Android Views")
                     }
                 }
             }
@@ -39,53 +37,23 @@ class ComposeActivity : ComponentActivity() {
     }
 }
 
-// Don't copy over
 @Composable
-private fun Hoho(name: String) {
-    var expanded = false // Don't do this!
+fun OutlinedButtonExample(title: String) {
+    ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
+        val button = createRef()
 
-    Surface(
-        color = MaterialTheme.colors.primary,
-        modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
-    ) {
-        Row(modifier = Modifier.padding(24.dp)) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(text = "Hello, ")
-                Text(text = name)
-            }
-            OutlinedButton(
-                onClick = { expanded = !expanded }
-            ) {
-                Text(if (expanded) "Show less" else "Show more")
-            }
+        OutlinedButton(onClick = { /* Do something! */ },
+            modifier = Modifier.constrainAs(button) {
+                start.linkTo(parent.start)
+                end.linkTo(parent.end)
+            }) {
+            Text(title)
         }
     }
 }
 
-@Composable
-fun AuthenticationButton() {
-    Button(onClick = { }) {
-
-    }
-}
 
 @Composable
-fun OutlinedButtonExample() {
-    OutlinedButton(onClick = { /* Do something! */ }) {
-        Text("I'm an Outlined Button")
-    }
-}
-
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MyBaseTemplateTheme {
-        Greeting("Android")
-    }
+fun Greeting(content: String) {
+    Text(text = content, fontWeight = FontWeight.Bold)
 }

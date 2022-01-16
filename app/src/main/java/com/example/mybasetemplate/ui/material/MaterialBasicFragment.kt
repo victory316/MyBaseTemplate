@@ -11,6 +11,7 @@ import com.example.mybasetemplate.databinding.FragmentMaterialBasicBinding
 import com.example.mybasetemplate.ext.showToast
 import com.example.mybasetemplate.presentation.MaterialViewModel
 import com.example.mybasetemplate.ui.components.MyFullscreenDialog
+import com.example.mybasetemplate.ui.compose.ui.dialog.ComposeDialogs.AlertDialogSample
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
@@ -88,7 +89,6 @@ class MaterialBasicFragment : Fragment() {
 
                     }
                     .setPositiveButton(resources.getString(R.string.content_show_big_dialog)) { _, _ ->
-
                         showFullScreenDialog()
                     }
                     .show()
@@ -97,6 +97,7 @@ class MaterialBasicFragment : Fragment() {
     }
 
     private fun subscribeUi() {
+
     }
 
     override fun onCreateView(
