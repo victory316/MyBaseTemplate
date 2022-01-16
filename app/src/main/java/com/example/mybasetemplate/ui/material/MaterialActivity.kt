@@ -2,6 +2,7 @@ package com.example.mybasetemplate.ui.material
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import com.example.mybasetemplate.R
 import com.example.mybasetemplate.databinding.ActivityMaterialBinding
 import com.example.mybasetemplate.ext.replaceFragment
@@ -21,7 +22,6 @@ class MaterialActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setupUi()
         subscribeUi()
     }
