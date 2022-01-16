@@ -28,7 +28,7 @@ class ComposeActivity : ComponentActivity() {
                         Greeting(content = "Hello Compose!")
                         OutlinedButtonWithFunction("Only using Compose",
                             function = {
-                                startActivity(ComposeActivity())
+//                                startActivity(ComposeActivity())
                             })
                         OutlinedButtonWithFunction("Mix with Android Views",
                             function = {
