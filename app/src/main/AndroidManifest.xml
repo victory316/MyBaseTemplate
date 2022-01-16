@@ -11,6 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyBaseTemplate">
         <activity
+            android:name=".ui.compose.mixed_compose.MixedComposeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.compose.only_compose.OnlyComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_only_compose"
+            android:theme="@style/Theme.MyBaseTemplate.NoActionBar" />
+        <activity
             android:name=".ui.compose.ComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_compose"

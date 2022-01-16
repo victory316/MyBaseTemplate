@@ -13,9 +13,10 @@ object ComposeDialogs {
 
     @Composable
     fun AlertDialogSample() {
+        val openDialog = remember { mutableStateOf(false) }
+
         MaterialTheme {
             Column {
-                val openDialog = remember { mutableStateOf(false) }
 
                 Button(onClick = {
                     openDialog.value = true
