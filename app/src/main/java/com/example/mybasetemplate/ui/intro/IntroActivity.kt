@@ -10,6 +10,7 @@ import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.presentation.IntroViewModel
 import com.example.mybasetemplate.ui.compose.ComposeActivity
 import com.example.mybasetemplate.ui.material.MaterialActivity
+import com.example.mybasetemplate.ui.motionlayout.MotionLayoutActivity
 import com.example.mybasetemplate.ui.weather.WeatherActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,7 +48,8 @@ class IntroActivity : AppCompatActivity() {
             listOf(
                 IntroFeatureData(1, IntroFeatures.FEATURE_MATERIAL),
                 IntroFeatureData(1, IntroFeatures.FEATURE_WEATHER_API),
-                IntroFeatureData(1, IntroFeatures.FEATURE_COMPOSE)
+                IntroFeatureData(1, IntroFeatures.FEATURE_COMPOSE),
+                IntroFeatureData(1, IntroFeatures.FEATURE_MOTION_LAYOUT),
             )
         )
 
@@ -71,6 +73,9 @@ class IntroActivity : AppCompatActivity() {
                     }
                     IntroViewModel.Companion.IntroEvent.EVENT_OPEN_COMPOSE -> {
                         startActivity(ComposeActivity())
+                    }
+                    IntroViewModel.Companion.IntroEvent.EVENT_OPEN_MOTION_LAYOUT -> {
+                        startActivity(MotionLayoutActivity())
                     }
 
                     else -> {

@@ -25,6 +25,9 @@ class IntroViewModel : ViewModel() {
                 IntroFeatures.FEATURE_COMPOSE -> {
                     onIntroEvent.postValue(IntroEvent.EVENT_OPEN_COMPOSE)
                 }
+                IntroFeatures.FEATURE_MOTION_LAYOUT -> {
+                    onIntroEvent.postValue(IntroEvent.EVENT_OPEN_MOTION_LAYOUT)
+                }
             }
         }
     }
@@ -33,7 +36,8 @@ class IntroViewModel : ViewModel() {
         enum class IntroEvent {
             EVENT_OPEN_MATERIAL,
             EVENT_OPEN_WEATHER_API,
-            EVENT_OPEN_COMPOSE
+            EVENT_OPEN_COMPOSE,
+            EVENT_OPEN_MOTION_LAYOUT
         }
     }
 }

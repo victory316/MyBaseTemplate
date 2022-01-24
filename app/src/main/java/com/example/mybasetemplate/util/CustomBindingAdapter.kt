@@ -27,6 +27,9 @@ object CustomBindingAdapter {
             IntroFeatures.FEATURE_COMPOSE -> {
                 view.setImageResource(R.drawable.outline_wb_sunny_black_48)
             }
+            else -> {
+                view.setImageResource(R.drawable.outline_wb_sunny_black_48)
+            }
         }
     }
 
@@ -42,6 +45,9 @@ object CustomBindingAdapter {
             }
             IntroFeatures.FEATURE_COMPOSE -> {
                 view.text = view.context.getText(R.string.item_compose)
+            }
+            IntroFeatures.FEATURE_MOTION_LAYOUT -> {
+                view.text = view.context.getText(R.string.item_motion_layout)
             }
         }
     }
