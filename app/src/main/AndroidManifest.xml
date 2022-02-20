@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyBaseTemplate">
         <activity
+            android:name=".ui.motionlayout.MotionTransitionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.motionlayout.MotionClickActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.compose.mixed_compose.MixedComposeActivity"
             android:exported="false" />
         <activity

@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.mybasetemplate.presentation.MotionLayoutViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
@@ -31,6 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title">
@@ -44,11 +49,12 @@
                     android:id="@+id/tv_menu_title_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="menu 1"
+                    android:text="Animation on click"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -58,6 +64,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_menu_1">
@@ -71,7 +79,7 @@
                     android:id="@+id/tv_menu_title_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="menu 2"
+                    android:text="Animation on Swipe"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -85,6 +93,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_menu_2">
@@ -106,6 +116,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/iv_sample"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginBottom="212dp"
+            android:src="@drawable/icon_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
 
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
