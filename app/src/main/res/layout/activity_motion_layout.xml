@@ -46,7 +46,7 @@
                     android:id="@+id/tv_menu_title_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="menu 1"
+                    android:text="Animation on click"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -75,7 +75,7 @@
                     android:id="@+id/tv_menu_title_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="menu 2"
+                    android:text="Animation on Swipe"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -112,6 +112,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/iv_sample"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginBottom="212dp"
+            android:src="@drawable/icon_material"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
 
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
