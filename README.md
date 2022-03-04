@@ -25,6 +25,9 @@ By Seongwhan Choi
 - Dark Theme Available
 - ProtoDataStore with Kotlin Flow
 - Paging3
+- Reusable Partial UI Elements like Dialogs etc. with Jetpack Compose
+- Fully applied Jetpack Compose
+- xml layouts with Jetpack Compose
 
 ### What I'm focusing
 
