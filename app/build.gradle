@@ -106,21 +106,22 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
 
 
-    implementation("androidx.compose.ui:ui:1.0.5")
+    implementation("androidx.compose.ui:ui:1.1.1")
     // Tooling support (Previews, etc.)
-    implementation("androidx.compose.ui:ui-tooling:1.0.5")
+    implementation("androidx.compose.ui:ui-tooling:1.1.1")
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    implementation("androidx.compose.foundation:foundation:1.0.5")
+    implementation("androidx.compose.foundation:foundation:1.1.1")
     // Material Design
-    implementation("androidx.compose.material:material:1.0.5")
+    implementation("androidx.compose.material:material:1.1.1")
     // Material design icons
-    implementation("androidx.compose.material:material-icons-core:1.0.5")
-    implementation("androidx.compose.material:material-icons-extended:1.0.5")
+    implementation("androidx.compose.material:material-icons-core:1.1.1")
+    implementation("androidx.compose.material:material-icons-extended:1.1.1")
     // Integration with observables
-    implementation("androidx.compose.runtime:runtime-livedata:1.0.5")
-    implementation("androidx.compose.runtime:runtime-rxjava2:1.0.5")
-    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-rc02"
+    implementation("androidx.compose.runtime:runtime-livedata:1.1.1")
+    implementation("androidx.compose.runtime:runtime-rxjava2:1.1.1")
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
+    implementation "androidx.compose.material3:material3:1.0.0-alpha06"
 
     // UI Tests
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.0.5")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.1")
 }

@@ -7,8 +7,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
 import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.ui.compose.mixed_compose.MixedComposeActivity
 import com.example.mybasetemplate.ui.compose.ui.theme.MyBaseTemplateTheme
@@ -28,7 +30,7 @@ class ComposeActivity : ComponentActivity() {
                         Greeting(content = "Hello Compose!")
                         OutlinedButtonWithFunction("Only using Compose",
                             function = {
-//                                startActivity(ComposeActivity())
+                                startActivity(ComposeActivity())
                             })
                         OutlinedButtonWithFunction("Mix with Android Views",
                             function = {
@@ -61,4 +63,13 @@ fun OutlinedButtonWithFunction(title: String, function: () -> Unit) {
 @Composable
 fun Greeting(content: String) {
     Text(text = content, style = Typography.body1)
+}
+
+@Composable
+@Preview("ButtonPreview")
+fun OutlinedButtonPreview() {
+    OutlinedButtonWithFunction("Only using Compose",
+        function = {
+
+        })
 }
