@@ -7,12 +7,7 @@ By Seongwhan Choi
 ### What are available
 ##### Material Design Components
 	ExtendedFloatingActionButton, BottomNavigationView, DatePicker(Single, Ranged)
-
-- Motion Layout(In working)
-- Fast browsing with Chrome Custom Tabs(In working)
-- REST API Using Retrofit2(In working)
-- Sample Chat(In working)
-- WorkManger(In working)
+- Motion Layout
 
 ### What were used
 
@@ -21,6 +16,15 @@ By Seongwhan Choi
 - Clean Architecture
 - Google Matrial Design
 - Jetpack Compose
+
+### Scheduled features
+- Fast browsing with Chrome Custom Tabs
+- REST API Using Retrofit2
+- Sample Chat
+- WorkManger
+- Dark Theme Available
+- ProtoDataStore with Kotlin Flow
+- Paging3
 
 ### What I'm focusing
 
