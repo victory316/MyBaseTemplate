@@ -3,6 +3,7 @@ package com.example.mybasetemplate.ui.intro
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.example.mybasetemplate.base.BaseActivity
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ActivityIntroBinding
 import com.example.mybasetemplate.enums.IntroFeatures
@@ -18,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
  *  앱이 시작된 뒤로 사용 가능한 기능들을 나열하는 Activity
  */
 @AndroidEntryPoint
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
 
     private lateinit var binding: ActivityIntroBinding
     private lateinit var adapter: IntroAdapter

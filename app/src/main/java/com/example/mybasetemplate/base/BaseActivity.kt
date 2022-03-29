@@ -19,11 +19,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
 
-        val scope = CoroutineScope(Dispatchers.IO).launch {
-            showToast("다시 눌러 ")
-        }
-
-        scope.cancel()
+//        val scope = CoroutineScope(Dispatchers.IO).launch {
+//            showToast("다시 눌러 ")
+//        }
+//
+//        scope.cancel()
 
         super.onBackPressed()
     }

@@ -12,13 +12,16 @@
         android:theme="@style/Theme.AppSplash">
         <activity
             android:name=".ui.motionlayout.MotionTransitionActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyBaseTemplate" />
         <activity
             android:name=".ui.motionlayout.MotionClickActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyBaseTemplate" />
         <activity
             android:name=".ui.compose.mixed_compose.MixedComposeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyBaseTemplate" />
         <activity
             android:name=".ui.compose.only_compose.OnlyComposeActivity"
             android:exported="false"
@@ -31,16 +34,20 @@
             android:theme="@style/Theme.MyBaseTemplate.NoActionBar" />
         <activity
             android:name=".ui.motionlayout.MotionLayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyBaseTemplate" />
         <activity
             android:name=".ui.weather.WeatherActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyBaseTemplate" />
         <activity
             android:name=".ui.material.MaterialActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyBaseTemplate" />
         <activity
             android:name=".ui.intro.IntroActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MyBaseTemplate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,7 +56,9 @@
 
         </activity>
 
-        <activity android:name=".base.BaseActivity" />
+        <activity
+            android:name=".base.BaseActivity"
+            android:theme="@style/Theme.MyBaseTemplate" />
     </application>
 
 </manifest>
