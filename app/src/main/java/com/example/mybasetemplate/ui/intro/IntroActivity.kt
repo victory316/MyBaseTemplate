@@ -1,6 +1,5 @@
 package com.example.mybasetemplate.ui.intro
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.mybasetemplate.base.BaseActivity
