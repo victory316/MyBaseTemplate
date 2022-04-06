@@ -39,9 +39,13 @@ class ComposeActivity : ComponentActivity() {
                     }
                 }
             }
-
         }
     }
+}
+
+@Composable
+fun ActivityContent() {
+
 }
 
 @Composable
@@ -59,7 +63,6 @@ fun OutlinedButtonWithFunction(title: String, function: () -> Unit) {
     }
 }
 
-
 @Composable
 fun Greeting(content: String) {
     Text(text = content, style = Typography.body1)
@@ -70,6 +73,5 @@ fun Greeting(content: String) {
 fun OutlinedButtonPreview() {
     OutlinedButtonWithFunction("Only using Compose",
         function = {
-
         })
 }
