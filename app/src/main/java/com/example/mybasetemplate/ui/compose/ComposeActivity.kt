@@ -13,6 +13,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat.startActivity
 import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.ui.compose.mixed_compose.MixedComposeActivity
+import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivity
 import com.example.mybasetemplate.ui.compose.ui.theme.MyBaseTemplateTheme
 import com.example.mybasetemplate.ui.compose.ui.theme.Typography
 
@@ -30,7 +31,7 @@ class ComposeActivity : ComponentActivity() {
                         Greeting(content = "Hello Compose!")
                         OutlinedButtonWithFunction("Only using Compose",
                             function = {
-                                startActivity(ComposeActivity())
+                                startActivity(ComposeCodelabActivity())
                             })
                         OutlinedButtonWithFunction("Mix with Android Views",
                             function = {
