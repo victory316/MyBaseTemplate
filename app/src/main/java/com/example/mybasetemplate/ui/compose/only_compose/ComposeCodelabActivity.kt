@@ -68,7 +68,7 @@ fun PreviewAnimatedMessageCard() {
 fun Conversation(messages: List<Message>) {
     LazyColumn {
         items(messages) { message ->
-            MessageCard(message.body)
+            MessageCardAnimated(message.body)
         }
     }
 }
