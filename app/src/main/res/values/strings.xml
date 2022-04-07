@@ -20,4 +20,5 @@
     <string name="content_show_big_dialog">SHOW BIG ONE!</string>
     <string name="title_activity_compose">ComposeActivity</string>
     <string name="title_activity_only_compose">OnlyComposeActivity</string>
+    <string name="title_activity_compose_codelab">ComposeCodelabActivity</string>
 </resources>

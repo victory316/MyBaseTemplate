@@ -11,6 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSplash">
         <activity
+            android:name=".ui.compose.only_compose.ComposeCodelabActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_codelab"
+            android:theme="@style/Theme.AppSplash" />
+        <activity
             android:name=".ui.motionlayout.MotionTransitionActivity"
             android:exported="false"
             android:theme="@style/Theme.MyBaseTemplate" />
@@ -53,9 +58,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".base.BaseActivity"
             android:theme="@style/Theme.MyBaseTemplate" />
