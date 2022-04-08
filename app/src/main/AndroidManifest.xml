@@ -11,11 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSplash">
         <activity
+            android:name=".ui.compose.only_compose.ComposeCodelabActivitySecond"
+            android:exported="false"
+            android:label="@string/title_activity_compose_codelab_second"
+            android:theme="@style/Theme.AppSplash" />
+        <activity
             android:name=".ui.compose.only_compose.ComposeCodelabActivity"
             android:exported="false"
             android:label="@string/title_activity_compose_codelab"
             android:theme="@style/Theme.MyBaseTemplate" />
-
         <activity
             android:name=".ui.compose.only_compose.ComposeCodelabActivityFirst"
             android:exported="false"
