@@ -1,6 +1,7 @@
 package com.example.mybasetemplate.ui.compose.only_compose
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.*
@@ -19,14 +20,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.AlignmentLine
-import androidx.compose.ui.layout.FirstBaseline
-import androidx.compose.ui.layout.Layout
-import androidx.compose.ui.layout.layout
+import androidx.compose.ui.layout.*
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.ConstraintSet
+import androidx.constraintlayout.compose.Dimension
 import coil.compose.rememberImagePainter
 import com.example.mybasetemplate.ui.compose.ui.theme.LayoutsCodelabTheme
 import kotlinx.coroutines.launch
@@ -35,7 +36,10 @@ class ComposeCodelabActivitySecond : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GridBodyContent()
+            Column {
+                GridBodyContent()
+                ScrollingList()
+            }
         }
     }
 }
@@ -183,7 +187,7 @@ fun ScrollingList() {
                     scrollState.animateScrollToItem(listSize - 1)
                 }
             }) {
-                Text("SCroll to the end")
+                Text("Scroll to the end")
             }
         }
 
@@ -342,7 +346,9 @@ fun StaggeredGrid(
 @Composable
 fun Chip(modifier: Modifier = Modifier, text: String) {
     Card(
-        modifier = modifier,
+        modifier = modifier.clickable(onClick = {
+
+        }),
         border = BorderStroke(color = Color.Black, width = Dp.Hairline),
         shape = RoundedCornerShape(8.dp)
     ) {
@@ -377,7 +383,13 @@ fun GridBodyContent(modifier: Modifier = Modifier) {
         "Religion", "Social sciences", "Technology", "TV", "Writing"
     )
 
-    Row(modifier = modifier.horizontalScroll(rememberScrollState())) {
+    Row(
+        modifier = modifier
+            .background(color = Color.LightGray)
+            .size(200.dp)
+            .padding(16.dp)
+            .horizontalScroll(rememberScrollState())
+    ) {
         StaggeredGrid(modifier = modifier) {
             for (topic in topics) {
                 Chip(modifier = Modifier.padding(8.dp), text = topic)
@@ -386,10 +398,135 @@ fun GridBodyContent(modifier: Modifier = Modifier) {
     }
 }
 
+/**
+ * You can change the layout direction of a composable using the LayoutDirection ambient.
+
+If you're placing composables manually on the screen,
+the layoutDirection is part of the LayoutScope of the layout modifier
+or Layout composable. When using layoutDirection, place composables
+using place as unlike the placeRelative method,
+it won't automatically mirror the position in right-to-left context.
+ */
+
 @Preview
 @Composable
 fun CustomChipsPreview() {
     LayoutsCodelabTheme {
         GridBodyContent()
+    }
+}
+
+@Composable
+fun ConstraintLayoutContent() {
+    ConstraintLayout {
+        // Create references for the composables to constrain
+        val (button1, button2, text) = createRefs()
+
+        Button(
+            onClick = {},
+            // Assign reference "button" to the Button composable
+            // and constrain it to the top of the ConstraintLayout
+            modifier = Modifier.constrainAs(button1) {
+                top.linkTo(parent.top, margin = 16.dp)
+            }
+        ) {
+            Text("Button")
+        }
+// Assign reference "text" to the Text composable
+        // and constrain it to the bottom of the Button composable
+        Text("Text", Modifier.constrainAs(text) {
+            top.linkTo(button1.bottom, margin = 16.dp)
+            centerAround(button1.end)
+        })
+
+        val barrier = createEndBarrier(button1, text)
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier.constrainAs(button2) {
+                top.linkTo(parent.top, margin = 16.dp)
+                start.linkTo(barrier)
+            }) {
+
+            Text("Button 2")
+        }
+    }
+}
+
+@Preview
+@Composable
+fun ConstraintLayoutContentPreview() {
+    LayoutsCodelabTheme {
+        ConstraintLayoutContent()
+    }
+}
+
+/**
+ * Available Dimension behaviors are:
+
+- preferredWrapContent - the layout is wrap content, subject to the constraints in that dimension.
+- wrapContent - the layout is wrap content even if the constraints would not allow it.
+- fillToConstraints - the layout will expand to fill the space defined by its constraints in that dimension.
+- preferredValue - the layout is a fixed dp value, subject to the constraints in that dimension.
+- value - the layout is a fixed dp value, regardless of the constraints in that dimension
+
+ */
+// width = Dimension.preferredWrapContent.atLeast(100.dp)
+@Composable
+fun LargeConstraintLayout() {
+    ConstraintLayout {
+        val text = createRef()
+
+        val guideline = createGuidelineFromStart(fraction = 0.5f)
+        Text(
+            "This is a very very very very very very very long text",
+            Modifier.constrainAs(text) {
+                linkTo(start = guideline, end = parent.end)
+                width = Dimension.preferredWrapContent
+            }
+        )
+    }
+}
+
+@Preview
+@Composable
+fun LargeConstraintLayoutPreview() {
+    LayoutsCodelabTheme {
+        LargeConstraintLayout()
+    }
+}
+
+@Composable
+fun DecoupledConstraintLayout() {
+    BoxWithConstraints {
+        val constraints = if (maxWidth < maxHeight) {
+            decoupledConstraints(margin = 16.dp) // Portrait constraints
+        } else {
+            decoupledConstraints(margin = 32.dp) // Landscape constraints
+        }
+
+        ConstraintLayout(constraints) {
+            Button(
+                onClick = { /* Do something */ },
+                modifier = Modifier.layoutId("button")
+            ) {
+                Text("Button")
+            }
+
+            Text("Text", Modifier.layoutId("text"))
+        }
+    }
+}
+
+private fun decoupledConstraints(margin: Dp): ConstraintSet {
+    return ConstraintSet {
+        val button = createRefFor("button")
+        val text = createRefFor("text")
+
+        constrain(button) {
+            top.linkTo(parent.top, margin= margin)
+        }
+        constrain(text) {
+            top.linkTo(button.bottom, margin)
+        }
     }
 }
