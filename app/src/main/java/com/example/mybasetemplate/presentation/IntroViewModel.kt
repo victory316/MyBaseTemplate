@@ -3,13 +3,16 @@ package com.example.mybasetemplate.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.mybasetemplate.data.IntroRepository
 import com.example.mybasetemplate.enums.IntroFeatures
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  *  Intro page Viewmodel
  */
-class IntroViewModel : ViewModel() {
+class IntroViewModel() : ViewModel() {
 
     val onIntroEvent = MutableLiveData<IntroEvent>()
 

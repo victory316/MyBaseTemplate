@@ -13,6 +13,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.content.ContextCompat.startActivity
 import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.ui.compose.mixed_compose.MixedComposeActivity
+import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivity
+import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivityFirst
+import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivitySecond
 import com.example.mybasetemplate.ui.compose.ui.theme.MyBaseTemplateTheme
 import com.example.mybasetemplate.ui.compose.ui.theme.Typography
 
@@ -26,27 +29,50 @@ class ComposeActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
 
-                    Column(modifier = Modifier.padding(24.dp)) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(24.dp)
+                    ) {
                         Greeting(content = "Hello Compose!")
-                        OutlinedButtonWithFunction("Only using Compose",
+                        OutlinedButtonWithFunction("Tutorial : Jetpack Compose Basic ",
                             function = {
-                                startActivity(ComposeActivity())
+                                startActivity(ComposeCodelabActivity())
                             })
+                        OutlinedButtonWithFunction("CODELAB : Jetpack Compose Basic",
+                            function = {
+                                startActivity(ComposeCodelabActivityFirst())
+                            })
+
+                        OutlinedButtonWithFunction("CODELAB : Layouts in Jetpack Compose",
+                            function = {
+                                startActivity(ComposeCodelabActivitySecond())
+                            })
+
                         OutlinedButtonWithFunction("Mix with Android Views",
                             function = {
                                 startActivity(MixedComposeActivity())
                             })
+
                     }
                 }
             }
-
         }
     }
 }
 
 @Composable
+fun ActivityContent() {
+
+}
+
+@Composable
 fun OutlinedButtonWithFunction(title: String, function: () -> Unit) {
-    ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
+    ConstraintLayout(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+    ) {
         val button = createRef()
 
         OutlinedButton(onClick = { function.invoke() },
@@ -59,7 +85,6 @@ fun OutlinedButtonWithFunction(title: String, function: () -> Unit) {
     }
 }
 
-
 @Composable
 fun Greeting(content: String) {
     Text(text = content, style = Typography.body1)
@@ -70,6 +95,5 @@ fun Greeting(content: String) {
 fun OutlinedButtonPreview() {
     OutlinedButtonWithFunction("Only using Compose",
         function = {
-
         })
 }

@@ -1,15 +1,10 @@
 package com.example.mybasetemplate.ui.intro
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mybasetemplate.R
 import com.example.mybasetemplate.data.IntroFeatureData
 import com.example.mybasetemplate.databinding.ItemIntroFeatureBinding
-import com.example.mybasetemplate.enums.IntroFeatures
 import com.example.mybasetemplate.presentation.IntroViewModel
 
 /**
