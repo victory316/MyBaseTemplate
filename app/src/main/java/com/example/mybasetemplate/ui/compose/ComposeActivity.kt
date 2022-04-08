@@ -29,7 +29,11 @@ class ComposeActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
 
-                    Column(modifier = Modifier.padding(24.dp)) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(24.dp)
+                    ) {
                         Greeting(content = "Hello Compose!")
                         OutlinedButtonWithFunction("Tutorial : Jetpack Compose Basic ",
                             function = {
@@ -64,7 +68,11 @@ fun ActivityContent() {
 
 @Composable
 fun OutlinedButtonWithFunction(title: String, function: () -> Unit) {
-    ConstraintLayout(modifier = Modifier.fillMaxWidth()) {
+    ConstraintLayout(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+    ) {
         val button = createRef()
 
         OutlinedButton(onClick = { function.invoke() },

@@ -2,6 +2,7 @@ package com.example.mybasetemplate.ui.compose.only_compose
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -27,6 +28,9 @@ import kotlinx.coroutines.launch
 class ComposeCodelabActivitySecond : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContent {
+            ScrollingList()
+        }
     }
 }
 
@@ -70,7 +74,7 @@ fun PhotographerCardWithDefaultModifier(modifier: Modifier = Modifier) {
 @Composable
 fun PhotographerCardPreview() {
     LayoutsCodelabTheme {
-        ScrollingList()
+        PhotographerCard()
     }
 }
 
