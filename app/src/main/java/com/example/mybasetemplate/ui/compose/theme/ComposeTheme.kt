@@ -5,6 +5,8 @@ import android.os.Build
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.MaterialTheme.shapes
+import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.material.ripple.rememberRipple
@@ -63,4 +65,23 @@ fun JetchatTheme(
             content = content
         )
     }
+}
+
+@Composable
+fun BasicsCodelabTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    val colors = if (darkTheme) {
+        JetchatDarkColorScheme
+    } else {
+        JetchatLightColorScheme
+    }
+
+    MaterialTheme(
+        colors = colors,
+        typography = typography,
+        shapes = shapes,
+        content = content
+    )
 }

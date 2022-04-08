@@ -121,6 +121,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-rxjava2:1.1.1")
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
     implementation "androidx.compose.material3:material3:1.0.0-alpha06"
+    implementation "androidx.compose.material:material-icons-extended:1.0.0"
 
     // UI Tests
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.1")

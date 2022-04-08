@@ -21,4 +21,6 @@
     <string name="title_activity_compose">ComposeActivity</string>
     <string name="title_activity_only_compose">OnlyComposeActivity</string>
     <string name="title_activity_compose_codelab">ComposeCodelabActivity</string>
+    <string name="show_less">Show less</string>
+    <string name="show_more">Show more</string>
 </resources>
