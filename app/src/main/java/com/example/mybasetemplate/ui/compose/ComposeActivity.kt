@@ -15,6 +15,7 @@ import com.example.mybasetemplate.ext.startActivity
 import com.example.mybasetemplate.ui.compose.mixed_compose.MixedComposeActivity
 import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivity
 import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivityFirst
+import com.example.mybasetemplate.ui.compose.only_compose.ComposeCodelabActivitySecond
 import com.example.mybasetemplate.ui.compose.ui.theme.MyBaseTemplateTheme
 import com.example.mybasetemplate.ui.compose.ui.theme.Typography
 
@@ -38,10 +39,17 @@ class ComposeActivity : ComponentActivity() {
                             function = {
                                 startActivity(ComposeCodelabActivityFirst())
                             })
+
+                        OutlinedButtonWithFunction("CODELAB : Layouts in Jetpack Compose",
+                            function = {
+                                startActivity(ComposeCodelabActivitySecond())
+                            })
+
                         OutlinedButtonWithFunction("Mix with Android Views",
                             function = {
                                 startActivity(MixedComposeActivity())
                             })
+
                     }
                 }
             }
