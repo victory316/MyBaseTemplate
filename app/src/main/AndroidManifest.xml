@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppSplash">
-
+        <activity
+            android:name=".ui.compose.only_compose.StateCodeLabActivity"
+            android:exported="false"
+            android:label="@string/title_activity_state_code_lab"
+            android:theme="@style/Theme.AppSplash" />
         <activity
             android:name=".ui.compose.only_compose.ComposeCodelabActivitySecond"
             android:exported="false"
